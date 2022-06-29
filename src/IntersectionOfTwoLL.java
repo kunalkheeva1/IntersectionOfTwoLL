@@ -13,6 +13,18 @@ public class IntersectionOfTwoLL {
          public static Node intersectionOfTwoLL(Node headA, Node headB){
              HashMap<Node, Boolean> map = new HashMap<>();
 
+             while(headA != null){
+                 map.put(headA, true);
+                 headA = headA.next;
+             }
+
+             while (headB != null){
+                 if(map.containsKey(headB)){
+                    return headB;
+                 }
+                 headB = headB.next;
+             }return null;
+
          }
      }
 
